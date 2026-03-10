@@ -1,1 +1,1 @@
-# student-management-system-qt
+# Student Management System
