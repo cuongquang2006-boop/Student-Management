@@ -10,10 +10,10 @@
 - Upload student images from the user's device and store them with student data.
 - Save student information along with their class.
 
-###  Scores
-###  Courses
-###  Payment
-###  Dashboard
-###  Database
+###  Scores 2
+###  Courses 1
+###  Payment 3
+###  Dashboard 4
+###  Database 5
 ---
 ## Complete (20%)
