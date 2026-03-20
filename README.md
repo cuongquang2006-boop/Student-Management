@@ -15,7 +15,7 @@
 - UI with clear, distinguishable menu and layout.
 - Support saving/loading all course data along with student information.
 - Create a dialog to manage student roster for each course.
-- Add / remove students in the course directly from the dialog.
+- Add students in the course directly from the dialog.
 - Display student info (name + ID) in a table inside the dialog.
 - Integrate with course CRUD so changes are saved/loaded properly.
 
