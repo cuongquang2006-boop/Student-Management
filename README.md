@@ -1,4 +1,4 @@
-# Student Management System
+# Student Management System (ADMIN)
 ---
 ### 1 Student Manager ✔
 - Login screen with username and password. Users can create an account if they don't have one.
