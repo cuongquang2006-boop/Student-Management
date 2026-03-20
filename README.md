@@ -1,4 +1,4 @@
-# Student Management System (ADMIN)
+# Student Management System (ADMIN) (Code with QT creator and VS2022)
 ---
 ### 1 Student Manager ✔
 - Login screen with username and password. Users can create an account if they don't have one.
