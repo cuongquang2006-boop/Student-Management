@@ -20,7 +20,20 @@
 - Integrate with course CRUD so changes are saved/loaded properly.
 
 ### 3 Scores ✔
-
+- Manage student grades per course.
+- Dropdowns to select Student and Course.
+- Input fields for Process (0–10, 60%) and Final (0–10, 40%).
+- Buttons: Add/Update to save grades, Delete to remove.
+- Table shows: Student, Course, Process, Final, Total.
+- Total = Process × 0.6 + Final × 0.4, auto-calculated.
+- Filters table by selected student or course.
+- Save/load all scores to/from JSON.
 ### 4 Dashboard ✔
+- Overview of the system with quick stats: Students, Courses, Scores counts.
+- Top Students table ranked by total score: Rank, ID, Name, Score.
+- Quick action buttons: View Courses, Save Courses, Load Courses.
+- Auto-updates when students, courses, or scores change.
+- Displays rankings based on total accumulated scores across courses.
+
 ---
 ## Complete (100%)
