@@ -19,7 +19,8 @@
 - Display student info (name + ID) in a table inside the dialog.
 - Integrate with course CRUD so changes are saved/loaded properly.
 
-###  Scores 2
+### 3 Scores ✔
+
 ###  Dashboard 4
 ---
 ## Complete (2/6)
