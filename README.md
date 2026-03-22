@@ -20,7 +20,6 @@
 - Integrate with course CRUD so changes are saved/loaded properly.
 
 ###  Scores 2
-###  Payment 3
 ###  Dashboard 4
 ###  Database 5
 ---
