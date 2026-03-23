@@ -38,5 +38,3 @@
 - Auto-updates when students, courses, or scores change.
 - Displays rankings based on total accumulated scores across courses.
 
----
-## Complete (100%)
