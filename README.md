@@ -1,5 +1,4 @@
 # Student Management System (user:ADMIN) (Code with QT creator and VS2022)
----
 
 ### 1 Student Manager ✔
 - Login screen with username and password. Users can create an account if they don't have one.
@@ -37,4 +36,21 @@
 - Quick action buttons: view courses, save courses, load courses.
 - Auto-updates when students, courses, or scores change.
 - Displays rankings based on total accumulated scores across courses.
+
+## 🎬 Demo
+
+### Login
+![Login](gifs/login-demo.gif)
+
+### Student Manager
+![Student](gifs/student-crud.gif)
+
+### Courses
+![Courses](gifs/course-dialog.gif)
+
+### Scores
+![Scores](gifs/scores-auto-calc.gif)
+
+### Dashboard
+![Dashboard](gifs/dashboard.gif)
 
