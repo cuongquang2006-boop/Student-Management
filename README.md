@@ -37,12 +37,15 @@
 - Auto-updates when students, courses, or scores change.
 - Displays rankings based on total accumulated scores across courses.
 
-## 🎬 Demo
+## 🎬 Demo  
 
-### Login
-![Login](img/login.png)
+### Login  
+<p align="center">
+  <img src="img/login.png" width="900"/>
+</p>
 
-### Menu
-![Student](img/ui.gif)
-
+### Menu  
+<p align="center">
+  <img src="img/ui.gif" width="900"/>
+</p>
 
