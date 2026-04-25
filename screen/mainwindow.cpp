@@ -9,17 +9,15 @@
 #include <QStatusBar>
 #include <QMessageBox>
 
-#include <QPropertyAnimation>   //tạo animation
-#include <QEasingCurve>         //set độ mượt cho animation
+#include <QPropertyAnimation>   
+#include <QEasingCurve>         
 
-// json
 #include <QFileDialog>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QFile>
 
-// helper
 void MainWindow::setActiveButton(QPushButton* btn)
 {
     for (QPushButton* b : menuButtons)
@@ -54,7 +52,6 @@ void MainWindow::setActiveButton(QPushButton* btn)
     )");
 }
 
-// constructor
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
 {
@@ -69,13 +66,11 @@ MainWindow::MainWindow(QWidget* parent)
     sideLayout->setSpacing(10);
     sideLayout->setContentsMargins(10, 20, 10, 10);
 
-    // menu buttons
     QPushButton* btnDashboard = new QPushButton("Dashboard");
     QPushButton* btnStudent = new QPushButton("Student Manager");
     QPushButton* btnCourses = new QPushButton("Courses");
     QPushButton* btnScores = new QPushButton("Scores");
 
-    //vector
     menuButtons = {
         btnDashboard,
         btnStudent,
@@ -83,42 +78,33 @@ MainWindow::MainWindow(QWidget* parent)
         btnScores,
     };
 
-    //add vào hiệu ứng cho mỗi button ở menu
     for (QPushButton* btn : menuButtons)
         sideLayout->addWidget(btn);
 
-    sideLayout->addStretch(); // thêm 1 khoảng trống, và sẽ cắt ngang bởi 1 layout nào đó tiếp theo
+    sideLayout->addStretch();
 
-    // save/load buttons
     QPushButton* btnSave = new QPushButton("Save All");
     QPushButton* btnLoad = new QPushButton("Load All");
 
-    //nút này sẽ ở cuối cùng, vì nó sau khoảng trống UI
     sideLayout->addWidget(btnSave);
     sideLayout->addWidget(btnLoad);
 
-    // stack
     stack = new QStackedWidget;
 
-    // dashboard mới
     dashboardWidget = new DashboardWidget;
     stack->addWidget(dashboardWidget);
 
-    // student
     studentWidget = new StudentManagerWidget;
     connect(studentWidget, &StudentManagerWidget::backRequested,
         this, &MainWindow::openDashboard);
     stack->addWidget(studentWidget);
 
-    // course
     courseWidget = new CoursesManagerWidget;
     stack->addWidget(courseWidget);
 
-    // score
     scoreWidget = new ScoreManagerWidget;
     stack->addWidget(scoreWidget);
 
-    // init data
     courseWidget->setStudentList(studentWidget->getStudents());
 
     scoreWidget->setData(
@@ -127,7 +113,6 @@ MainWindow::MainWindow(QWidget* parent)
         {}
     );
 
-    // sync data
     connect(studentWidget, &StudentManagerWidget::dataChanged,
         this, [this]()
         {
@@ -148,7 +133,6 @@ MainWindow::MainWindow(QWidget* parent)
 
     setCentralWidget(central);
 
-    // button connect
     connect(btnDashboard, &QPushButton::clicked, this, [=]() {
             dashboardWidget->setData(
             studentWidget->getStudents(),
@@ -194,7 +178,6 @@ MainWindow::MainWindow(QWidget* parent)
     setActiveButton(btnDashboard);
 }
 
-// save
 void MainWindow::saveAll()
 {
     QString fileName = QFileDialog::getSaveFileName(this, "Save All", "", "*.json");
@@ -232,7 +215,6 @@ void MainWindow::saveAll()
     QMessageBox::information(this, "OK", "Saved ALL data!");
 }
 
-// load
 void MainWindow::loadAll()
 {
     QString fileName = QFileDialog::getOpenFileName(this, "Load All", "", "*.json");
@@ -276,7 +258,6 @@ void MainWindow::loadAll()
     QMessageBox::information(this, "OK", "Loaded ALL data!");
 }
 
-// close event
 void MainWindow::closeEvent(QCloseEvent* event)
 {
     if (studentWidget->isModified())
@@ -298,7 +279,6 @@ void MainWindow::closeEvent(QCloseEvent* event)
     event->accept();
 }
 
-// navigation
 void MainWindow::openDashboard()
 {
     stack->setCurrentWidget(dashboardWidget);
