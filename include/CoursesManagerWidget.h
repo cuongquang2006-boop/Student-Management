@@ -41,11 +41,9 @@ private:
     QComboBox* studentBox;
     QComboBox* classBox;
 
-    // UI + CONNECTION 
     void setupUI();
     void setupConnections();
 
-    //  LOGIC 
     void refreshTable();
     void updateStudentCombo(int row);
     bool isValidCourseId(const QString& id);
