@@ -20,7 +20,6 @@ DetailStudentInformation::DetailStudentInformation(const Student &student, QWidg
 
 void DetailStudentInformation::inforUI()
 {
-    // ===== Avatar =====
     photoLabel = new QLabel;
     photoLabel->setFixedSize(170,220);
     photoLabel->setAlignment(Qt::AlignCenter);
