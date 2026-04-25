@@ -1,6 +1,5 @@
 ﻿#include "StudentManagerWidget.h"
 
-// Qt Widgets
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QTableWidget>
@@ -8,16 +7,13 @@
 #include <QComboBox>
 #include <QSpinBox>
 
-// Qt Core
 #include <QRegularExpression>
 #include <QFile>
 
-// Qt JSON
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 
-// Qt GUI (nếu có dùng cursor trong QTextEdit thì thêm)
 #include <QTextCursor>
 
 void StudentManagerWidget::addStudent()
@@ -27,12 +23,9 @@ void StudentManagerWidget::addStudent()
     QString major = majorBox->currentText().trimmed();
     QString className = classBox->currentText();
 
-    // check ký tự lạ
     QRegularExpression idRegex("^\\d+$");
     QRegularExpression nameRegex("^[\\p{L} ]+$");
     QRegularExpression textRegex("^[\\p{L}0-9 ]+$");
-
-    //check input
 
     if (id.isEmpty() || name.isEmpty())
     {
@@ -97,7 +90,6 @@ void StudentManagerWidget::addStudent()
         }
     }
 
-    //add student infor
     students.append(Student(
         id,
         name,
@@ -117,8 +109,6 @@ void StudentManagerWidget::addStudent()
 }
 
 
-//update student
-
 void StudentManagerWidget::updateStudent()
 {
     int row = table->currentRow();
@@ -136,12 +126,10 @@ void StudentManagerWidget::updateStudent()
     QString gender = genderBox->currentText();
     int age = ageSpin->value();
 
-    // regex, check ký tự lạ
-    QRegularExpression idRegex("^\\d+$");           //check chỉ số
-    QRegularExpression nameRegex("^[\\p{L} ]+$");   //chỉ được chứa chữ cái(mọi ngôn ngữ) và khoảng trắng
-    QRegularExpression textRegex("^[\\p{L}0-9 ]+$");//giống regex name nhưng được thêm số 0-9
+    QRegularExpression idRegex("^\\d+$");          
+    QRegularExpression nameRegex("^[\\p{L} ]+$");   
+    QRegularExpression textRegex("^[\\p{L}0-9 ]+$");
 
-    // check dữ liệu đầu vào
     if (id.isEmpty() || name.isEmpty())
     {
         QMessageBox::warning(this, "Update Fail!", "ID and Name are required!");
@@ -184,7 +172,6 @@ void StudentManagerWidget::updateStudent()
         return;
     }
 
-    //check trùng lặp, trừ chính nó khi up
     for (int i = 0; i < students.size(); ++i)
     {
         if (i != row && students[i].id == id)
@@ -194,10 +181,7 @@ void StudentManagerWidget::updateStudent()
         }
     }
 
-    // giữ avatar cũ
     QString oldAvatar = students[row].avatarPath;
-
-    // update
     students[row] = Student(
         id,
         name,
