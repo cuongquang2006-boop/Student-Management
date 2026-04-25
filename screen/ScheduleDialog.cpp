@@ -14,7 +14,7 @@ ScheduleDialog::ScheduleDialog(QWidget* parent)
 void ScheduleDialog::setSchedule(const QVector<Course>& courses)
 {
     if (table) {
-        delete table; // clear old table
+        delete table; 
     }
 
     table = new QTableWidget(this);
