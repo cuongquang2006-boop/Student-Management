@@ -13,15 +13,14 @@ public:
     QString name;
     QString teacher;
     QString className;
-    QStringList studentIds; // danh sách ID sinh viên
+    QStringList studentIds; 
 
-    Course() {} // constructor mặc định
+    Course() {}
 
     Course(QString id, QString name, QString teacher, QString className)
         : id(id), name(name), teacher(teacher), className(className) {
     }
 
-    // Chuyển sang JSON
     QJsonObject toJson() const
     {
         QJsonObject obj;
@@ -37,7 +36,6 @@ public:
         return obj;
     }
 
-    // Tạo từ JSON
     static Course fromJson(const QJsonObject& obj)
     {
         Course c(
@@ -54,7 +52,6 @@ public:
         return c;
     }
 
-    // thêm/xóa sinh viên
     void addStudent(const QString& studentId) {
         if (!studentIds.contains(studentId))
             studentIds.append(studentId);
